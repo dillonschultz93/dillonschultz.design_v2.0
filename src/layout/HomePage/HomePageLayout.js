@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Transition } from 'react-transition-group';
 import Navbar from '../../components/Navbar/Navbar';
 import styles from './HomePageLayout.module.scss';
@@ -11,7 +12,6 @@ import emailIcon from '../../images/outline-mail_outline-24px.svg';
 const HomePageLayout = ({ path }) => {
   const defaultCircleStyles = {
     borderRadius: '50%',
-    position: 'fixed',
     transition: 'all 250ms ease-in-out',
   };
 
@@ -116,128 +116,137 @@ const HomePageLayout = ({ path }) => {
   };
 
   return (
-    <Transition in={path === '/about/'} timeout={350}>
-      {(state) => (
-        <div
-          className={styles.Layout}
-          style={{ ...defaultBgStyles, ...transitionBgStyles[state] }}
-        >
-          <Navbar />
-          <div className={styles.helloContainer}>
+    <>
+      <Helmet>
+        <title>Dillon Schultz</title>
+      </Helmet>
+      <Transition in={path === '/about/'} timeout={350}>
+        {(state) => (
+          <div
+            className={styles.Layout}
+            style={{ ...defaultBgStyles, ...transitionBgStyles[state] }}
+          >
+            <Navbar />
+            <div className={styles.helloContainer}>
+              <Transition in={path === '/about/'} timeout={250}>
+                {(state) => (
+                  <div
+                    className={styles.helloContainerCopy}
+                    style={{
+                      ...defaultHelloCopy,
+                      ...transitionHelloCopy[state],
+                    }}
+                  >
+                    <h1 className={styles.helloHeading}>
+                      Hello,{' '}
+                      <span style={{ display: 'table' }}>I'm Dillon.</span>
+                    </h1>
+                    <h1 className={styles.helloSubheading}>
+                      I'm a designer &{' '}
+                      <span style={{ display: 'table' }}>
+                        front end developer
+                      </span>
+                    </h1>
+                  </div>
+                )}
+              </Transition>
+              <Transition in={path === '/about/'} timeout={250}>
+                {(state) => (
+                  <div
+                    className={styles.circle}
+                    style={{
+                      ...defaultCircleStyles,
+                      ...transitionCircleStyles[state],
+                    }}
+                  ></div>
+                )}
+              </Transition>
+            </div>
             <Transition in={path === '/about/'} timeout={250}>
               {(state) => (
                 <div
-                  className={styles.helloContainerCopy}
-                  style={{ ...defaultHelloCopy, ...transitionHelloCopy[state] }}
-                >
-                  <h1 className={styles.helloHeading}>
-                    Hello, <span style={{ display: 'table' }}>I'm Dillon.</span>
-                  </h1>
-                  <h1 className={styles.helloSubheading}>
-                    I'm a designer &{' '}
-                    <span style={{ display: 'table' }}>
-                      front end developer
-                    </span>
-                  </h1>
-                </div>
-              )}
-            </Transition>
-            <Transition in={path === '/about/'} timeout={250}>
-              {(state) => (
-                <div
-                  className={styles.circle}
                   style={{
-                    ...defaultCircleStyles,
-                    ...transitionCircleStyles[state],
+                    ...defaultGradientStyles,
+                    ...transitionGradientStyles[state],
                   }}
-                ></div>
+                >
+                  <div className={styles.aboutDetialsCopyContainer}>
+                    <h5 className={styles.connectHeading}>connect with me</h5>
+                    <div className={styles.linkArray}>
+                      <a
+                        href="https://twitter.com/dill_schultz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.linkIcon}
+                      >
+                        <img
+                          src={twitterLogo}
+                          alt="twitter logo"
+                          style={{ height: '100%', width: '100%' }}
+                        />
+                      </a>
+                      <a
+                        href="https://www.instagram.com/dill.schultz/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.linkIcon}
+                      >
+                        <img
+                          src={instagramLogo}
+                          alt="instagram logo"
+                          style={{ height: '100%', width: '100%' }}
+                        />
+                      </a>
+                      <a
+                        href="https://github.com/dillonschultz93"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.linkIcon}
+                      >
+                        <img
+                          src={gitHubLogo}
+                          alt="github logo"
+                          style={{ height: '100%', width: '100%' }}
+                        />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/dillon-schultz-7a5b2bab/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.linkIcon}
+                      >
+                        <img
+                          src={linkedinLogo}
+                          alt="linkedin logo"
+                          style={{ height: '100%', width: '100%' }}
+                        />
+                      </a>
+                      <a
+                        href="mailto:hello@dillonschultz.design?subject=Hello! I saw your site"
+                        className={styles.linkIcon}
+                      >
+                        <img
+                          src={emailIcon}
+                          alt="email icon"
+                          style={{ height: '100%', width: '100%' }}
+                        />
+                      </a>
+                    </div>
+                    <p>
+                      A result-driven Front-End Developer with an extensive
+                      background working in graphic design and editorial design.
+                      Looking to apply knowledge of front-end development and
+                      graphic design to create user-friendly and polished web
+                      applications.
+                    </p>
+                  </div>
+                </div>
               )}
             </Transition>
           </div>
-          <Transition in={path === '/about/'} timeout={250}>
-            {(state) => (
-              <div
-                style={{
-                  ...defaultGradientStyles,
-                  ...transitionGradientStyles[state],
-                }}
-              >
-                <div className={styles.aboutDetialsCopyContainer}>
-                  <h5 className={styles.connectHeading}>connect with me</h5>
-                  <div className={styles.linkArray}>
-                    <a
-                      href="https://twitter.com/dill_schultz"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.linkIcon}
-                    >
-                      <img
-                        src={twitterLogo}
-                        alt="twitter logo"
-                        style={{ height: '100%', width: '100%' }}
-                      />
-                    </a>
-                    <a
-                      href="https://www.instagram.com/dill.schultz/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.linkIcon}
-                    >
-                      <img
-                        src={instagramLogo}
-                        alt="instagram logo"
-                        style={{ height: '100%', width: '100%' }}
-                      />
-                    </a>
-                    <a
-                      href="https://github.com/dillonschultz93"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.linkIcon}
-                    >
-                      <img
-                        src={gitHubLogo}
-                        alt="github logo"
-                        style={{ height: '100%', width: '100%' }}
-                      />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/dillon-schultz-7a5b2bab/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.linkIcon}
-                    >
-                      <img
-                        src={linkedinLogo}
-                        alt="linkedin logo"
-                        style={{ height: '100%', width: '100%' }}
-                      />
-                    </a>
-                    <a
-                      href="mailto:hello@dillonschultz.design"
-                      className={styles.linkIcon}
-                    >
-                      <img
-                        src={emailIcon}
-                        alt="email icon"
-                        style={{ height: '100%', width: '100%' }}
-                      />
-                    </a>
-                  </div>
-                  <p>
-                    A result-driven Front-End Developer with an extensive
-                    background working in graphic design and editorial design.
-                    Looking to apply knowledge of front-end development and
-                    graphic design to create user-friendly and polished web
-                    applications.
-                  </p>
-                </div>
-              </div>
-            )}
-          </Transition>
-        </div>
-      )}
-    </Transition>
+        )}
+      </Transition>
+    </>
   );
 };
 
