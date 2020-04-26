@@ -1,0 +1,65 @@
+// # COLORS
+// ## Neutral Palette
+$color-neutral-white: #f9f9f9;
+$color-neutral-lightGray: #dfe0e2;
+$color-neutral-gray: #85898e;
+$color-neutral-darkGray: #676c72;
+$color-neutral-black: #393f47;
+
+// ## Primary Palette
+// ### primary hues
+$color-primary-100: #a9a3ff;
+$color-primary-300: #877eff;
+$color-primary-500: #5044ff;
+$color-primary-700: #483de5;
+$color-primary-900: #3e35c8;
+
+// secondary hues
+$color-secondary-100: #7bffc5;
+$color-secondary-300: #44ffae;
+$color-secondary-500: #3de79d;
+$color-secondary-700: #36cb8a;
+$color-secondary-900: #2da973;
+
+// ## Semantic Palette
+// 🚧
+
+// ## Gradients
+$gradient-primary: linear-gradient(
+  104.93deg,
+  $color-primary-300 0%,
+  $color-primary-500 100%
+);
+$gradient-secondary: linear-gradient(
+  104.93deg,
+  $color-secondary-300 0%,
+  $color-secondary-500 100%
+);
+$gradient-combined: linear-gradient(
+  104.93deg,
+  $color-primary-500 0%,
+  $color-secondary-500 100%
+);
+
+// # TYPOGRAPHY
+// ## Sizing
+$type-size-jumbo: 3rem;
+$type-size-large: 2.5rem;
+$type-size-h1: 2rem;
+$type-size-h2: 1.5rem;
+$type-size-h3: 1.25rem;
+$type-size-h4: 1.125rem;
+$type-size-h5: 1rem;
+$type-size-p: 1rem;
+$type-size-sm: 0.875rem;
+
+// ## Weight
+$type-weight-light: 300;
+$type-weight-regular: 400;
+$type-weight-semiBold: 600;
+$type-weight-bold: 700;
+
+// ## Family
+%montserrat {
+  font-family: "Montserrat", sans-serif;
+}

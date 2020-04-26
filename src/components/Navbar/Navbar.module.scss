@@ -1,0 +1,38 @@
+@import '../../styles/main.scss';
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  border-bottom: 2px solid $color-neutral-white;
+  position: relative;
+  z-index: 999;
+}
+
+.navItems {
+  @extend h3;
+  font-weight: $type-weight-regular;
+  display: flex;
+}
+
+.navItem {
+  box-sizing: border-box;
+  cursor: pointer;
+  text-decoration: none;
+  color: $color-neutral-white;
+  text-shadow: 0px 4px 8px rgba(57, 63, 71, 0.7);
+
+  &:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+
+  &:hover {
+    font-weight: $type-weight-bold;
+  }
+
+  &:active {
+    font-weight: $type-weight-bold;
+  }
+}
