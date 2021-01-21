@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	.text-jumbo {
+		@apply text-4xl;
+	}
+
+	.text-large {
+		@apply text-3xl;
+	}
+
+	h1 {
+		@apply text-2xl mb-12 font-bold;
+	}
+
+	h2 {
+		@apply text-xl mb-6 font-bold;
+	}
+
+	h3 {
+		@apply text-lg mb-0 font-bold;
+	}
+
+	h4 {
+		@apply text-md mb-0 font-bold;
+	}
+
+	h5 {
+		@apply text-base tracking-widest lowercase mb-0 font-bold;
+		font-variant: small-caps;
+	}
+
+	p {
+		@apply text-base mb-6;
+	}
+
+	.text-small {
+		@apply text-sm mb-6;
+	}
+
+	ul {
+		@apply list-disc mb-6;
+	}
+
+	ol {
+		@apply list-decimal mb-6;
+	}
+
+	li {
+		@apply list-inside;
+	}
+
+	.link {
+		@apply text-indigo-600 font-semibold relative cursor-pointer;
+	}
+
+	.link::before {
+		transform: scaleX(0);
+		transform-origin: bottom right;
+	}
+
+	.link:hover::before {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+
+	.link::before {
+		content: ' ';
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		inset: 0 0 0 0;
+		background: hsl(244 100% 92%);
+		z-index: -1;
+		transition: transform 0.3s ease;
+	}
+
+	code {
+		font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+			'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+			'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+			monospace !important;
+	}
+
+	blockquote {
+		@apply bg-indigo-000 rounded p-4 font-semibold my-6 italic;
+	}
+
+	figure {
+		@apply mb-6;
+	}
+
+	figure > img {
+		@apply rounded;
+		margin: 0 auto;
+	}
+}
+
+html {
+	background: linear-gradient(180deg, #f9f9f9 0%, #edecffb3 100%) no-repeat;
+}
+
+@import './utilities.css';
