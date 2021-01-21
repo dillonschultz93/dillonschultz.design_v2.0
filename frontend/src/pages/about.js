@@ -64,7 +64,7 @@ const AboutPage = () => {
             development.
           </p>
           <p className="mb-12">
-            I'm currently a junior developer at Procorio, still learning and
+            I'm currently a junior developer at Proctorio, still learning and
             growing as a developer. My aspirations with my career are to work on
             large-scale design systems and component libraries.
           </p>
