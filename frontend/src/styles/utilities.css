@@ -1,0 +1,15 @@
+.blur-bg {
+	background: #f9f9f9cc;
+	backdrop-filter: blur(40px);
+}
+
+.truncate {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.pushToBottom {
+	min-height: calc(100vh - 8rem);
+}
