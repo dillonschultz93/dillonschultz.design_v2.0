@@ -42,7 +42,7 @@ const AboutPage = () => {
                 ( He / Him / His )
               </h5>
               <p>
-                Hey, I'm Dillon, a front end developer and designer. I'm
+                Hey, I'm Dillon, a designer and frontend developer. I'm
                 constantly searching for ways to integrate design and
                 development.
               </p>
@@ -64,9 +64,9 @@ const AboutPage = () => {
             development.
           </p>
           <p className="mb-12">
-            I'm currently a junior developer at Procorio, still learning and
-            growing as a developer. My aspirations with my career are to work on
-            large-scale design systems and component libraries.
+            I'm currently a UI/UX designer at Yummly, still learning and growing
+            as a designer and developer. My aspirations with my career are to
+            work on large-scale design systems and component libraries.
           </p>
           <h2 className="font-bold">Technologies I’m interested in</h2>
           <p>
@@ -86,7 +86,7 @@ const AboutPage = () => {
               <ul className="list-inside list-disc">
                 <li>Web Components</li>
                 <li>Node.js</li>
-                <li>Swift</li>
+                <li>Design Tokens</li>
                 <li>Figma</li>
               </ul>
             </div>
